@@ -15,7 +15,7 @@ class LoginContainer extends Component {
     render() {
 
         return (
-            <div>
+            <div className="loginContainer">
                 <LoginInput login={this.props.actions.login}/>
             </div>
         );
@@ -26,12 +26,12 @@ LoginContainer.propTypes = {
     actions: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state, props) {
+const mapStateToProps = (state, props) => {
     return {
     };
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
     return {
         actions: bindActionCreators(loginActions, dispatch)
     }

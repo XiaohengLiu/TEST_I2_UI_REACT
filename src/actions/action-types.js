@@ -1,2 +1,3 @@
 export const ADD_PERSON = 'ADD_PERSON';
-export const LOGIN = 'LOGIN';
+export const AUTHENTICATED = 'AUTHENTICATED';
+export const DASH_FOO = 'DASH_FOO';
