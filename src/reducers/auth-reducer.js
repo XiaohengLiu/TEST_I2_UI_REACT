@@ -17,6 +17,13 @@ export default (state = initialState, action) => {
                 type: 'administrator',
             });
         }
+        case types.LOGOUT: {
+            return Object.assign({}, state, {
+                authenticated: false,
+                username: '',
+                type: '',
+            });
+        }
         default:
             return state;
     }

@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import * as loginActions from './actions/login-actions';
+import * as loginActions from './actions/auth-actions';
 
 import LoginContainer from './containers/LoginContainer';
 import DashboardContainer from './containers/DashboardContainer';
@@ -28,18 +28,23 @@ class App extends Component {
                 </div>
             );
         } else {
-            return (
-                <Route path='/' component={LoginContainer}/>
-            )
+            if (this.props.history.location.pathname.indexOf('login') === -1) {
+                this.props.history.push('/login');
+                return null;
+            } else {
+                return (
+                    <Route path='/' component={LoginContainer}/>
+                )
+            }
         }
     }
 
-    componentDidMount() {
-        console.log('did mount');
-        if (!this.props.auth.authenticated) {
-            this.props.history.push('/login');
-        }
-    }
+    // componentDidMount() {
+    //     console.log('did mount');
+    //     if (!this.props.auth.authenticated) {
+    //         this.props.history.push('/login');
+    //     }
+    // }
 }
 
 const mapStateToProps = (state, props) => {

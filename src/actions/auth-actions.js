@@ -10,6 +10,7 @@ export const login = (user) => (dispatch) => {
 }
 
 export const logout = (user) => (dispatch) => {
+    console.log('logout has been called...');
     return new Promise(function(resolve, reject) {
         dispatch({
             type: types.LOGOUT,

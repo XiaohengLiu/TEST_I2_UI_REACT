@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import LoginInput from '../components/login/LoginInput';
-import * as loginActions from '../actions/login-actions';
+import * as loginActions from '../actions/auth-actions';
 
 class LoginContainer extends Component {
     constructor(props) {

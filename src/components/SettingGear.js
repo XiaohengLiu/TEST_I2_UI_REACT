@@ -1,19 +1,34 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 
 class SettingGear extends Component {
     constructor(props) {
         super(props);
+        console.log('setting gear props: ', this.props);
         this.state = {showGear: false};
+
+        this.bound_handleClickOutside = this.handleClickOutside.bind(this);
     }
 
     toggleMenu() {
         this.setState({showGear: !this.state.showGear});
     }
 
+    handleOperation(operation) {
+        switch(operation) {
+            case 'logout':
+                this.props.actions.logout({
+                    username: this.props.auth.username
+                });
+                break;
+        }
+    }
+
     render() {
         const settings = this.props.auth.operations.map((operation) => {
             return (
-                <li>{operation}</li>
+                <li key={operation}
+                    onClick={this.handleOperation.bind(this, operation)}>{operation}</li>
             )
         });
 
@@ -33,6 +48,23 @@ class SettingGear extends Component {
                 {menu}
             </div>
         );
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', this.bound_handleClickOutside, true);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.bound_handleClickOutside, true);
+    }
+
+    handleClickOutside(event) {
+        const domNode = ReactDOM.findDOMNode(this);
+        if (!domNode || !domNode.contains(event.target)) {
+            this.setState({
+                showGear : false
+            });
+        }
     }
 }
 
