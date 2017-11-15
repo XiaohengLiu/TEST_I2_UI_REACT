@@ -16,7 +16,7 @@ class LoginContainer extends Component {
 
         return (
             <div className="loginContainer">
-                <LoginInput login={this.props.actions.login}/>
+                <LoginInput {...this.props}/>
             </div>
         );
     }

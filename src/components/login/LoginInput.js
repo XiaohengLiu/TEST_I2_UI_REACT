@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 class LoginInput extends Component {
     constructor(props) {
@@ -12,10 +11,11 @@ class LoginInput extends Component {
         const username = document.getElementById('username');
         const password = document.getElementById('password');
 
-        console.log('onLoginClick...');
-        this.props.login({
+        this.props.actions.login({
             username: username.value,
             password: password.value
+        }).then(() => {
+            this.props.history.push('/');
         });
     }
 
@@ -33,9 +33,5 @@ class LoginInput extends Component {
         );
     }
 }
-
-LoginInput.propTypes = {
-    login: PropTypes.func.isRequired
-};
 
 export default LoginInput;

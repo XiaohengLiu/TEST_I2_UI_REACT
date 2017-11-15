@@ -1,0 +1,37 @@
+.setting-gear {
+    overflow: visible;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    text-align: left;
+
+    .setting-gear_cog {
+        width: 30px;
+        height: 30px;
+        .glyph-control {
+            font-size: 25px;
+            color: black;
+            background-color: white;
+            z-index: 1998;
+            padding: 5px;
+        }
+    }
+
+    .setting-gear_list {
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        padding: 10px;
+        width: 140px;
+        margin: 0px;
+        background-color: #333;
+        border-color: rgba(58, 197, 255, 0.7);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 1px;
+        list-style-type: none;
+        color: #eee;
+        overflow: hidden;
+        pointer-events: all;
+    }
+}
