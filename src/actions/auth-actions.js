@@ -8,3 +8,12 @@ export const login = (user) => (dispatch) => {
         }).then(resolve());
     });
 }
+
+export const logout = (user) => (dispatch) => {
+    return new Promise(function(resolve, reject) {
+        dispatch({
+            type: types.LOGOUT,
+            user: user
+        }).then(resolve());
+    })
+}
