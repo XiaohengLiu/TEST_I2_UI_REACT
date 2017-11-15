@@ -10,6 +10,7 @@ import DashboardContainer from './containers/DashboardContainer';
 import AccountContainer from './containers/AccountContainer';
 import NavigationContainer from './containers/NavigationContainer';
 import SettingGear from './components/SettingGear';
+import Footer from './components/footer/Footer'
 
 class App extends Component {
 
@@ -17,34 +18,55 @@ class App extends Component {
         console.log('app props: ', this.props);
         if (this.props.auth.authenticated) {
             return (
-                <div className="App">
-                    <NavigationContainer/>
+                <div className="app-container">
                     <SettingGear {...this.props}/>
-                    <Switch>
-                        <Route exact path='/' component={DashboardContainer}/>
-                        <Route path='/account' component={AccountContainer}/>
-                        <Route path='/dash' component={DashboardContainer}/>
-                    </Switch>
+                    <div className="main-container">
+                        <div className="nav-container">
+                            <NavigationContainer {...this.props}/>
+                        </div>
+
+                        <div className="content-container">
+                            <div className="content-container_main">
+                                <Switch>
+                                    <Route exact path='/' component={DashboardContainer}/>
+                                    <Route path='/account' component={AccountContainer}/>
+                                    <Route path='/dash' component={DashboardContainer}/>
+                                </Switch>
+                            </div>
+
+                            <div className="content-container_footer">
+                                <Footer/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             );
         } else {
             if (this.props.history.location.pathname.indexOf('login') === -1) {
-                this.props.history.push('/login');
                 return null;
             } else {
                 return (
-                    <Route path='/' component={LoginContainer}/>
+                    <div className="app-container">
+                        <Route path='/' component={LoginContainer}/>
+                    </div>
                 )
             }
         }
     }
 
-    // componentDidMount() {
-    //     console.log('did mount');
-    //     if (!this.props.auth.authenticated) {
-    //         this.props.history.push('/login');
-    //     }
-    // }
+    componentDidUpdate() {
+        if (!this.props.auth.authenticated &&
+            this.props.history.location.pathname.indexOf('login') === -1) {
+            this.props.history.push('/login');
+        }
+    }
+
+    componentWillMount() {
+        if (!this.props.auth.authenticated &&
+            this.props.history.location.pathname.indexOf('login') === -1) {
+            this.props.history.push('/login');
+        }
+    }
 }
 
 const mapStateToProps = (state, props) => {

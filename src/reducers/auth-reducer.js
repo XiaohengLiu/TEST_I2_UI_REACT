@@ -3,9 +3,17 @@ import * as types from '../actions/action-types';
 const initialState = {
     accessToken: null,
     user: null,
-    permissions: ['account', 'management', 'virtualization','diagnostics','reporting','security'],
+    permissions: [
+        {name: 'account', path: '/account'},
+        {name: 'management', path: '/management'},
+        {name: 'virtualization', path: '/virtualization'},
+        {name: 'diagnostics', path: '/diagnostics'},
+        {name: 'reporting', path: '/reporting'},
+        {name: 'security', path: '/security'},
+    ],
     type: '',
     operations: ['logout','system','shutdown Symce', 'Shutdown System', 'Restart Symce', 'Restart System'],
+    authenticated: false,
 };
 
 export default (state = initialState, action) => {
@@ -18,6 +26,7 @@ export default (state = initialState, action) => {
             });
         }
         case types.LOGOUT: {
+            console.log('logouted in reducer...');
             return Object.assign({}, state, {
                 authenticated: false,
                 username: '',

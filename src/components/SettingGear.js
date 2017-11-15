@@ -21,6 +21,8 @@ class SettingGear extends Component {
                     username: this.props.auth.username
                 });
                 break;
+
+            default:
         }
     }
 
