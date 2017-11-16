@@ -1,4 +1,8 @@
+@import "styles/global";
+@import "styles/mixin";
+
 @import "styles/loginContainer";
+@import "styles/navigationContainer";
 @import "styles/components/SettingGear.scss";
 
 body {
@@ -18,23 +22,19 @@ body {
   };
 }
 
-.app-container {
-  border: 1px solid yellow;
+ul {
+  list-style-type: none;
+}
 
+.app-container {
   .main-container {
     display: flex;
     Flex-direction: row;
 
-
-    border: 1px solid orange;
-    margin-left: 20px;
-    margin-right: 20px;
-
     .nav-container {
       //display: inline-block;
       padding: 5px;
-      border: 1px solid lightgreen;
-      width: 20%;
+      min-width: 240px;
       height: 100vh;
     }
 
@@ -46,7 +46,6 @@ body {
       .content-container_main {
         flex-grow: 1;
         padding: 5px;
-        border: 1px solid white;
       }
 
       .content-container_footer {

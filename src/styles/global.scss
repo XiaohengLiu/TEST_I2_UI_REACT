@@ -1,0 +1,89 @@
+//------ VARIABLES ------//
+
+$navIconColorShift: "hue-rotate(10deg) brightness(0.92) saturate(1.75)";
+
+/*
+Orange 144
+Green 390 ( 389 is a bit brighter, so sometimes used instead on UI)
+Gray 425
+
+Blue 298
+Dark Gray 426
+
+Dark background on UI is 532 */
+
+// html colors obtained from http://www.pantone.com/color-finder
+$orange:     #ED8B00; // 144 C Orange
+$blue:       #41B6E6; // 298 C Blue
+$l-green:    #D0DF00; // 389 C (lighter) Green
+$green:      #B5BD00; // 390 C Green
+$gray:       #54585A; // 425 C Gray
+$d-gray:     #25282A; // 426 C Dark Gray
+$background: #1C1F2A; // 532 C Background
+
+// these colors obtained from png design samples
+$light-blue:     #33b6e4;
+$medium-blue:    #288db1;
+$dark-blue:      rgb(63, 90, 102);
+$light-row-blue: #2C5267;
+$dark-row-blue:  #29475A;
+$light-orange: #f89406;
+$green-darker:   #5e6526; // iris_dash.png
+
+// these colors direct from Melanie
+$dark-background: #292E34; // 426 hsl(213, 12%, 18%)
+$s-orange:        #ef8200; // 144 hsl(33, 100%, 47%)
+$s-blue:          #1ab7ea; // 298 hsl(195, 83%, 51%)
+$s-green:         #b5bf00; // 390 hsl(63, 100%, 37%)
+$s-light-green:   #ccdc00; // 389 hsl(64, 100%, 43%)
+$s-gray:          #575a5d; // 425
+$s-dark-gray:     #191c1f; // 426
+
+// alternate
+$blue-highlight:  hsl(195, 83%, 40%);
+
+$blue-darker:     hsl(195, 83%, 30%);
+$orange-darker:   hsl(33, 100%, 30%);
+
+// gradients
+
+$blue-vertical-gradient: linear-gradient(to bottom, #2f4b59, #328cae);
+$red-vertical-gradient: linear-gradient(to bottom, hsl(0, 100%, 25%), hsl(0, 100%, 50%));
+$orange-vertical-gradient: linear-gradient(to bottom, hsl(33, 100%, 47%), #191c1f);
+$red-vertical-gradient-black: linear-gradient(to bottom, hsl(0, 100%, 50%), #191c1f);
+$gray-vertical-gradient-black: linear-gradient(to bottom, hsl(0, 0%, 0%), hsl(0, 0%, 20%));
+
+$blue-dialog-gradient: linear-gradient(to bottom, hsla(200, 31%, 27%, 0.95), hsla(196, 55%, 44%, 0.95));
+
+/*
+Orange: 144
+R:239 G:130 B:0
+ef8200
+
+Blue: 298
+R:26 G:183 B:234
+1ab7ea
+
+Green: 390
+R:181 G:191 B:0
+b5bf00
+
+389 (bit brighter)
+R:204 G:220 B:0
+ccdc00
+
+gray: 425
+R:87 G:90 B:93
+575a5d
+
+Dark gray: 426
+R:26 G:28 B:31
+191c1f
+
+Dark UI Background: 532
+R:41 G:46 B:52
+292e34 */
+
+$header-font: eurostile;
+
+$rtm-graphic-diameter: 500px;

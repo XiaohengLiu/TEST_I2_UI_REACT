@@ -4,13 +4,15 @@ import {connect} from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import * as loginActions from './actions/auth-actions';
+import * as modalActions from './actions/modal-actions';
 
 import LoginContainer from './containers/LoginContainer';
 import DashboardContainer from './containers/DashboardContainer';
 import AccountContainer from './containers/AccountContainer';
 import NavigationContainer from './containers/NavigationContainer';
 import SettingGear from './components/SettingGear';
-import Footer from './components/footer/Footer'
+import Footer from './components/footer/Footer';
+import ModalContainer from './containers/ModalContainer';
 
 class App extends Component {
 
@@ -20,9 +22,12 @@ class App extends Component {
             return (
                 <div className="app-container">
                     <SettingGear {...this.props}/>
+                    <ModalContainer/>
                     <div className="main-container">
                         <div className="nav-container">
                             <NavigationContainer {...this.props}/>
+                            <button onClick={this.displayModal.bind(this)}>show modal</button>
+                            <button onClick={this.closeModal.bind(this)}>hide modal</button>
                         </div>
 
                         <div className="content-container">
@@ -54,6 +59,14 @@ class App extends Component {
         }
     }
 
+    displayModal() {
+        this.props.actions.displayModal();
+    }
+
+    closeModal() {
+        this.props.actions.closeModal();
+    }
+
     componentDidUpdate() {
         if (!this.props.auth.authenticated &&
             this.props.history.location.pathname.indexOf('login') === -1) {
@@ -71,13 +84,14 @@ class App extends Component {
 
 const mapStateToProps = (state, props) => {
     return {
-        auth: state.login
+        auth: state.login,
+        modal: state.modal
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        actions: bindActionCreators(loginActions, dispatch)
+        actions: bindActionCreators({...loginActions,...modalActions}, dispatch)
     }
 }
 

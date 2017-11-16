@@ -1,0 +1,91 @@
+.nav-container {
+    background-color: white;
+    color: black;
+    .page-logo-container {
+        text-align: center;
+        margin: 15px 0 15px 0;
+        .page-logo-image {
+            width: 80px;
+        }
+    }
+
+    @include header-font;
+
+    .nav-list {
+        padding: 0;
+        .nav-list_item {
+            border-bottom: 1px solid black;
+            padding: 5px 0 5px 20px;
+
+            .dashboard-logo {
+                background-image: url('./images/navbar/dashboard_dark.svg');
+            }
+            .account-logo {
+                background-image: url('./images/navbar/accounts_dark.svg');
+            }
+            .management-logo {
+                background-image: url('./images/navbar/management_dark.svg');
+            }
+            .virtualization-logo {
+                background-image: url('./images/navbar/virtualization_dark.svg');
+            }
+            .diagnostics-logo {
+                background-image: url('./images/navbar/diagnostics_dark.svg');
+            }
+            .reporting-logo {
+                background-image: url('./images/navbar/reporting_dark.svg');
+            }
+            .security-logo {
+                background-image: url('./images/navbar/security_dark.svg');
+            }
+
+            &:hover {
+                .dashboard-logo {
+                    background-image: url('./images/navbar/dashboard_blue.svg');
+                }
+                .account-logo {
+                    background-image: url('./images/navbar/accounts_blue.svg');
+                }
+                .management-logo {
+                    background-image: url('./images/navbar/management_blue.svg');
+                }
+                .virtualization-logo {
+                    background-image: url('./images/navbar/virtualization_blue.svg');
+                }
+                .diagnostics-logo {
+                    background-image: url('./images/navbar/diagnostics_blue.svg');
+                }
+                .reporting-logo {
+                    background-image: url('./images/navbar/reporting_blue.svg');
+                }
+                .security-logo {
+                    background-image: url('./images/navbar/security_blue.svg');
+                }
+                .nav-list_item_name {
+                    color: $s-blue;
+                }
+            }
+
+            .nav-list_item_container {
+                display: flex;
+                align-items: center;
+            }
+            .nav-list_item_logo {
+                background-size: contain;
+                width: 40px;
+                height: 40px;
+            }
+            .nav-list_item_name {
+                color: black;
+                font-weight: 100;
+                font-size: larger;
+                font-size: 18px;
+                margin-left: 10px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+
+
+}

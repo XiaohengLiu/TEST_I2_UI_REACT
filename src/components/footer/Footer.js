@@ -4,7 +4,7 @@ class Footer extends Component {
     render() {
 
         return (
-            <footer><h1>Footer Bar</h1></footer>
+            <footer><h1>Charm Bar Placeholder</h1></footer>
         )
     }
 }
