@@ -7,9 +7,10 @@ export function changeModal(modal) {
     };
 }
 
-export function displayModal() {
+export function displayModal(modal) {
     return {
         type: types.DISPLAY_MODAL,
+        modal: modal
     };
 }
 

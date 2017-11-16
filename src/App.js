@@ -9,6 +9,7 @@ import * as modalActions from './actions/modal-actions';
 import LoginContainer from './containers/LoginContainer';
 import DashboardContainer from './containers/DashboardContainer';
 import AccountContainer from './containers/AccountContainer';
+import VirtualizationContainer from './containers/VirtualizationContainer'
 import NavigationContainer from './containers/NavigationContainer';
 import SettingGear from './components/SettingGear';
 import Footer from './components/footer/Footer';
@@ -36,6 +37,7 @@ class App extends Component {
                                     <Route exact path='/' component={DashboardContainer}/>
                                     <Route path='/account' component={AccountContainer}/>
                                     <Route path='/dash' component={DashboardContainer}/>
+                                    <Route path='/virtualization' component={VirtualizationContainer}/>
                                 </Switch>
                             </div>
 
